@@ -1,0 +1,252 @@
+/* --- Robust CSS --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+body {
+    width: 405px;
+    height: 720px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- Main screen --- */
+#main-screen {
+    background: linear-gradient(45deg, #f093fb, #f5576c);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.main-content h1 {
+    font-size: 2.5em;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    margin: 0 0 10px 0;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.rose-icon {
+    font-size: 5em;
+    margin: 15px 0;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.participants-count {
+    font-size: 1em;
+    background: rgba(0,0,0,0.3);
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+/* --- Countdown screen --- */
+#countdown-screen {
+    background: radial-gradient(circle, #fc466b, #3f5efb);
+}
+
+.countdown-number {
+    font-size: 12em;
+    font-weight: 900;
+    text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+    animation: countdownPulse 1s ease-in-out;
+}
+
+@keyframes countdownPulse {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* --- Race screen --- */
+.race-info {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+#timer {
+    font-size: 3em;
+    font-weight: bold;
+    color: #FFD700;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+#race-track {
+    position: relative;
+    width: 90%;
+    height: 80%;
+    background: linear-gradient(to right, #c0392b, #e74c3c, #c0392b);
+    border: 4px solid #f1c40f;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.lane {
+    position: relative;
+    width: 100%;
+    height: 23%;
+    border-top: 2px dashed rgba(255, 255, 255, 0.5);
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
+}
+
+.lane:first-child {
+    border-top: none;
+}
+
+.lane:last-child {
+    border-bottom: none;
+}
+
+.runner {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: left 0.1s linear;
+}
+
+.runner img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+.player-name {
+    margin-top: 2px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1px 5px;
+    border-radius: 8px;
+    white-space: nowrap;
+    font-size: 0.7em;
+}
+
+.finish-line {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    background: repeating-linear-gradient(to bottom, white, white 8px, black 8px, black 16px);
+}
+
+/* --- Results screen --- */
+#results-screen {
+    background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+}
+
+#results-screen h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.podium {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 250px;
+    margin-top: 10px;
+}
+
+.podium-place {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 120px;
+}
+
+.first {
+    order: 2;
+    background: linear-gradient(to top, #FFD700, #FFA500);
+    height: 100%;
+}
+
+.second {
+    order: 1;
+    background: linear-gradient(to top, #C0C0C0, #808080);
+    height: 80%;
+}
+
+.third {
+    order: 3;
+    background: linear-gradient(to top, #CD7F32, #8B4513);
+    height: 60%;
+}
+
+.medal {
+    font-size: 3em;
+}
+
+.place-name {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+.winner-name {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #333;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 3px 8px;
+    border-radius: 8px;
+    word-wrap: break-word;
+}
