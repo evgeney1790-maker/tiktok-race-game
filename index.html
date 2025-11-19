@@ -1,0 +1,75 @@
+<!-- Loading Screen -->
+<div id="loading-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; display: flex; justify-content: center; align-items: center; z-index: 1000; font-family: 'Montserrat', sans-serif; color: white; font-size: 1.5em;">
+    <div>Loading...</div>
+</div>
+
+<!-- Main Game Container (Hidden at first) -->
+<div id="game-container" style="display: none;">
+    <!-- Main waiting screen -->
+    <div id="main-screen" class="screen">
+        <div class="main-content">
+            <h1> Avatar Racing </h1>
+            <p class="subtitle">Entry cost: one rose</p>
+            <div class="rose-icon">🌹</div>
+            <p class="participants-count">Waiting for participants...</p>
+        </div>
+    </div>
+    <!-- Countdown screen -->
+    <div id="countdown-screen" class="screen hidden">
+        <div class="countdown-number" id="countdown-number">3</div>
+    </div>
+    <!-- Race screen -->
+    <div id="race-screen" class="screen hidden">
+        <div class="race-info">
+            <div id="timer">35</div>
+        </div>
+        <div id="race-track">
+            <div class="lane" id="lane1">
+                <div class="runner">
+                    <img src="https://i.pravatar.cc/150?img=5" alt="Avatar 1">
+                    <span class="player-name"></span>
+                </div>
+            </div>
+            <div class="lane" id="lane2">
+                <div class="runner">
+                    <img src="https://i.pravatar.cc/150?img=5" alt="Avatar 2">
+                    <span class="player-name"></span>
+                </div>
+            </div>
+            <div class="lane" id="lane3">
+                <div class="runner">
+                    <img src="https://i.pravatar.cc/150?img=5" alt="Avatar 3">
+                    <span class="player-name"></span>
+                </div>
+            </div>
+            <div class="lane" id="lane4">
+                <div class="runner">
+                    <img src="https://i.pravatar.cc/150?img=5" alt="Avatar 4">
+                    <span class="player-name"></span>
+                </div>
+            </div>
+            <div class="finish-line"></div>
+        </div>
+    </div>
+    <!-- Results screen -->
+    <div id="results-screen" class="screen hidden">
+        <h1>🏆 Race Results 🏆</h1>
+        <div class="podium">
+            <div class="podium-place second">
+                <div class="medal">🥈</div>
+                <div class="place-name">2nd Place</div>
+                <div class="winner-name" id="second-place-name"></div>
+            </div>
+            <div class="podium-place first">
+                <div class="medal">🥇</div>
+                <div class="place-name">1st Place</div>
+                <div class="winner-name" id="first-place-name"></div>
+            </div>
+            <div class="podium-place third">
+                <div class="medal">🥉</div>
+                <div class="place-name">3rd Place</div>
+                <div class="winner-name" id="third-place-name"></div>
+            </div>
+        </div>
+    </div>
+</div>
